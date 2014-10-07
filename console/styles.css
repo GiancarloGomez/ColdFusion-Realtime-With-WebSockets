@@ -1,0 +1,16 @@
+#output{
+	height:667px;
+	overflow-y:scroll;
+	margin:0;
+}
+.list-unstyled li{
+	font: normal 12px/1.4em 'source code pro',consolas,monospace;
+	padding:1em;
+	margin:1px 0;
+	border-radius:0;
+}
+.list-unstyled li.default{background-color:#fff; border:1px solid #eee;}
+.list-unstyled li strong{ font-size: 1.2em;}
+::-webkit-input-placeholder {
+   color: #aaa !important;
+}
