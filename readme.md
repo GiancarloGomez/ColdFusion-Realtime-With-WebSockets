@@ -1,17 +1,32 @@
 #AdvancedSocket
 
-## Aims
+AdvanceSockets aims to help handling connectivity issues from the client side when using ColdFusion WebSocket solution.
 
-- Handle connectivity issues from the client side when using ColdFusion WebSocket solution.
+Below is a simple example of how to implement. The data attributes defined in the body are the default values and do not have to be set but can be overridden. For more information on how and where they are set refer to the Attributes / Properties section.
 
  ``` html
- 	<script src="/clients/js/advanced.js"></script>
+ 	<body 	data-auto-connect="true"
+ 			data-name="ws"
+ 			data-channels="channelname"
+ 			data-debug="true"
+ 			data-do-message="doMessage"
+ 			data-online-timer="30"
+ 			data-offline-timer="5"
+ 			data-reconnect-timer=".5"
+ 			data-ping="ping.cfm">
+ 	<div id="status-message" class="hide"></div>
+ 	<script src="advanced.js"></script>
 	<cfwebsocket 	name		="ws"
 					onMessage	="AdvancedSocket.onMessage"
 					onOpen		="AdvancedSocket.onOpen"
 					onClose		="AdvancedSocket.onClose"
 					onError		="AdvancedSocket.onError">
-
+	<script>
+		function doMessage(obj){
+			console.log(obj);
+		}
+	</script>
+	</body>
  ```
 
 ## Properties / Attributes
@@ -49,7 +64,8 @@ _Boolean value to display log messages. Defaults to false and can be overwritten
 - __statusLabel__<br />
 _The status document element defined by an id of status-message._
 
-##Functions
+## Functions
+
 - __init__<br />
 Sets up all required EventListeners to handle window connection events (connectionerror, goodconnection, requireconnection, offline, online). Sets up the timerCount to the onlineCount and then request the checkConnection() function.
 - __checkConnection__<br />
