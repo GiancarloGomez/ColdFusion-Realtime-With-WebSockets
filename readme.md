@@ -6,11 +6,11 @@
 
  ``` html
  	<script src="/clients/js/advanced.js"></script>
-	<cfwebsocket 	name		= "ws"
-					onMessage	= "AdvancedSocket.onMessage"
-					onOpen		= "AdvancedSocket.onOpen"
-					onClose		= "AdvancedSocket.onClose"
-					onError		= "AdvancedSocket.onError">
+	<cfwebsocket 	name		="ws"
+					onMessage	="AdvancedSocket.onMessage"
+					onOpen		="AdvancedSocket.onOpen"
+					onClose		="AdvancedSocket.onClose"
+					onError		="AdvancedSocket.onError">
 
  ```
 
