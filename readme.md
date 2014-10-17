@@ -1,10 +1,10 @@
-#AdvancedSocket 
+#AdvancedSocket
 
 ## Aims
 
 - Handle connectivity issues from the client side when using ColdFusion WebSocket solution.
- 
- ``` html
+
+ ``` coldfusion
  	<script src="/clients/js/advanced.js"></script>
 	<cfwebsocket 	name		= "ws"
 					onMessage	= "AdvancedSocket.onMessage"
