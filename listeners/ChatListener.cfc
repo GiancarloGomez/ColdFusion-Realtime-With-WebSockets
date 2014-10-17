@@ -74,8 +74,13 @@ component {
 		});
 
 		for(local.client in local.clients){
-			local.city 				= local.client.subscriberInfo.clientInfo.city ?: "";
-			local.region 			= local.client.subscriberInfo.clientInfo.region ?: "";
+
+        	//	local.city 				= local.client.subscriberInfo.clientInfo.city ?: "";
+			//	local.region 			= local.client.subscriberInfo.clientInfo.region ?: "";
+
+			local.city 		= isDefined("local.client.subscriberInfo.clientInfo.city") ? local.client.subscriberInfo.clientInfo.city : "";
+			local.region 	= isDefined("local.client.subscriberInfo.clientInfo.region") ? local.client.subscriberInfo.clientInfo.region : "";
+
 			local.region_string 	= "";
 
 			if (len(trim(local.city & local.region)))

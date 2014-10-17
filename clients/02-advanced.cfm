@@ -13,6 +13,7 @@
 </head>
 <body data-channels="demo,websockets" data-debug="true" data-online-timer="30" data-ping="/clients/ping/">
 
+	<!-- Header -->
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -24,14 +25,19 @@
 		</div>
 	</nav>
 
+	<!-- Footer -->
 	<div class="navbar navbar-default navbar-fixed-bottom">
 		<div id="status-message" class="hide"></div>
 	</div>
 
+	<!-- Console -->
 	<ul id="console" class="list-unstyled"></ul>
 
+	<!-- Third Party -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<!-- Local Scripts -->
 	<script src="/clients/js/advanced.js"></script>
 	<script src="/clients/js/simple.js"></script>
 

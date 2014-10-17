@@ -1,3 +1,6 @@
+/**
+* @output false
+*/
 component{
 
     this.name              = "websockets";

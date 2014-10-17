@@ -8,9 +8,7 @@
         channels        : document.body.dataset.channels ? document.body.dataset.channels.split(',') : [],
         clientID        : 0,
         clientInfo      : {},
-        connected       : false,
         doMessage       : document.body.dataset.doMessage || 'doMessage',
-        offline         : false,
         timer           : 0,
         pingURL         : document.body.dataset.ping || '',
         onlineCount     : (parseFloat(document.body.dataset.onlineTimer) || 30 ) * 1000,
@@ -40,7 +38,7 @@
             window.addEventListener('offline', function(e) {
                 AdvancedSocket.disconnected();
                 // if we go fully offline kill any pending timer
-                console.log('Event','offline',e);
+                AdvancedSocket.log('Event','offline',e);
             }, false);
 
             window.addEventListener('online', function(e) {
@@ -149,7 +147,7 @@
                 }
                 // notify user to create required notification
                 else {
-                    AdvancedSocket.log('Create a doMessage function and pass it in the data attributed of the body')
+                    AdvancedSocket.log('Create a doMessage function and pass it in the data-do-message attribute of the body')
                 }
             }
         },
