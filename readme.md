@@ -44,7 +44,7 @@ This is a key-value object that is passed when creating a connection. By default
 - __connected__<br />
 Boolean property that defines whether we are connected
 - __doMessage__<br />
-Defines the function to run on a succesful message. Defaults to doMessage.
+Defines the global function to run on a succesful message. Defaults to `doMessage`. If the function is not defined or does not exists a log message will be displayed (if debug is enabled).
 - __offline__<br />
 Boolean property that defines whether we are offline
 - __timer__<br />
