@@ -32,37 +32,37 @@ Below is a simple example of how to implement. The data attributes defined in th
 ## Properties / Attributes
 
 - __autoConnect__<br />
-_Controls the auto connect feature of the AdvancedSocket. It defaults to true but can be managed by the data-auto-connect attribute in the body tag. It also requires a pingURL to be defined._
+Controls the auto connect feature of the AdvancedSocket. It defaults to true but can be managed by the data-auto-connect attribute in the body tag. It also requires a pingURL to be defined.
 - __name__<br />
-_The name of your global websocket variable name. Defaults to `ws`_
+The name of your global websocket variable name. Defaults to `ws`
 - __channels__<br/ >
-_Comma separated list of channels to subscribe to._
+Comma separated list of channels to subscribe to.
 - __clientID__<br />
-_The subscriber ID returned from ColdFusion on a succesful connection. This is used when the autoConnect feature is enabled to make sure that we are still an active subscriber._
+The subscriber ID returned from ColdFusion on a succesful connection. This is used when the autoConnect feature is enabled to make sure that we are still an active subscriber.
 - __clientInfo__<br />
-_This is a key-value object that is passed when creating a connection. By default AdvancedSocket uses a third party request to find out additional geo-based data of the request. This is also used to pass in a username and any additional info you may want to._
+This is a key-value object that is passed when creating a connection. By default AdvancedSocket uses a third party request to find out additional geo-based data of the request. This is also used to pass in a username and any additional info you may want to.
 - __connected__<br />
-_Boolean property that defines whether we are connected_
+Boolean property that defines whether we are connected
 - __doMessage__<br />
-_Defines the function to run on a succesful message. Defaults to doMessage._
+Defines the function to run on a succesful message. Defaults to doMessage.
 - __offline__<br />
-_Boolean property that defines whether we are offline_
+Boolean property that defines whether we are offline
 - __timer__<br />
-_Used for the check connection setTimeout_
+Used for the check connection setTimeout
 - __pingURL__<br />
-_The URL that will be used to ping if we are still a good connection. SHould return a JSON object with a success value of true or false._
+The URL that will be used to ping if we are still a good connection. Should return a JSON object with a success value of true or false.
 - __onlineCount__<br />
-_The timeout value to ping if autoConnect is enabled while we have a good connection. This is default to 30 seconds and can be defined in the body data-online-timer attribute._
+The timeout value to ping if autoConnect is enabled while we have a good connection. This defaults to 30 seconds and can be defined in the body data-online-timer attribute.
 - __offlineCount__<br />
-_The timeout value to ping if autoConnect is enabled while we have a bad connection. This is default to 5 seconds and can be defined in the body data-offline-timer attribute._
+The timeout value to ping if autoConnect is enabled while we have a bad connection. This defaults to 5 seconds and can be defined in the body data-offline-timer attribute.
 - __reconnectCount__<br />
-_The timeout value call a reconnect attempt when a FORCE-RECONNECT value is received from the server. This defaults to 500ms and can be defined in the body data-reconnect-timer attribute._
+The timeout value call a reconnect attempt when a `FORCE-RECONNECT` value is received from the server. This defaults to 500ms and can be defined in the body data-reconnect-timer attribute.
 - __timerCount__<br />
-_The timeout value that is used on reconnect calls. It is automally updated to either the online or offline value based on current state._
+The timeout value that is used on reconnect calls. It is automally updated to either the online or offline value based on current state.
 - __debug__<br />
-_Boolean value to display log messages. Defaults to false and can be overwritten by the data-debug body attribute._
+Boolean value to display log messages. Defaults to false and can be overwritten by the data-debug body attribute.
 - __statusLabel__<br />
-_The status document element defined by an id of status-message._
+The status document element defined by an id of status-message.
 
 ## Functions
 
