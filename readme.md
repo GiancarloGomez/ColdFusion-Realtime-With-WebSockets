@@ -41,14 +41,10 @@ Comma separated list of channels to subscribe to.
 The subscriber ID returned from ColdFusion on a succesful connection. This is used when the autoConnect feature is enabled to make sure that we are still an active subscriber.
 - __clientInfo__<br />
 This is a key-value object that is passed when creating a connection. By default AdvancedSocket uses a third party request to find out additional geo-based data of the request. This is also used to pass in a username and any additional info you may want to.
-- __connected__<br />
-Boolean property that defines whether we are connected
 - __doMessage__<br />
 Defines the global function to run on a succesful message. Defaults to `doMessage`. If the function is not defined or does not exists a log message will be displayed (if debug is enabled).
-- __offline__<br />
-Boolean property that defines whether we are offline
 - __timer__<br />
-Used for the check connection setTimeout
+Used for the check AdvancedSocket.checkConnection setTimeout
 - __pingURL__<br />
 The URL that will be used to ping if we are still a good connection. Should return a JSON object with a success value of true or false.
 - __onlineCount__<br />
