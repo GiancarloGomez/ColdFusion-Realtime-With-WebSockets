@@ -75,7 +75,7 @@ Creates and dispatches custom events.
 - __ping__<br />
 Polls request to the server to check if connection is still valid.
 - __onMessage__<br />
-Handles messages returned. On "welcome, authenticate and/or subscribe" messages it auto fires the AdvancedSocket.connected() function. On "FORCE-RECONNECT" messages fires the AdvancedSocket.forceReconnect() funciton based on the reconnectCount. On a regular messages passes to the Global Function that will handle your message.
+Handles messages returned. On "welcome, authenticate and/or subscribe" messages it auto fires the AdvancedSocket.connected() function. On `FORCE-RECONNECT` messages fires the AdvancedSocket.forceReconnect() funciton based on the reconnectCount. On a regular messages passes to the Global Function that will handle your message.
 - __onOpen__<br />
 Fired onced the connection is open. If authentication is required, it calls the authenticate() WS function if not passes to the AdvancedSocket.getIPInfo() function, which is the last step before subscribing.
 - __onClose__<br />
