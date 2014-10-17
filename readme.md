@@ -4,7 +4,7 @@
 
 - Handle connectivity issues from the client side when using ColdFusion WebSocket solution.
 
- ``` coldfusion
+ ``` html
  	<script src="/clients/js/advanced.js"></script>
 	<cfwebsocket 	name		= "ws"
 					onMessage	= "AdvancedSocket.onMessage"
