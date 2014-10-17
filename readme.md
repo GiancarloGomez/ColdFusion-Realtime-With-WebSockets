@@ -1,6 +1,6 @@
 #AdvancedSocket
 
-AdvanceSockets aims to help handling connectivity issues from the client side when using ColdFusion WebSocket solution.
+AdvancedSockets aims to help handling connectivity issues from the client side when using ColdFusion WebSocket solution.
 
 Below is a simple example of how to implement. The data attributes defined in the body are the default values and do not have to be set but can be overridden. For more information on how and where they are set refer to the Attributes / Properties section.
 
