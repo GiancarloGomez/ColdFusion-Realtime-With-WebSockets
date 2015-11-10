@@ -10,9 +10,9 @@
         clientInfo      : {},
         doMessage       : document.body.dataset.doMessage || 'doMessage',
         timer           : 0,
-        pingURL         : document.body.dataset.ping || '',
-        onlineCount     : (parseFloat(document.body.dataset.onlineTimer) || 30 ) * 1000,
-        offlineCount    : (parseFloat(document.body.dataset.offlineTimer) || 5 ) * 1000,
+        pingURL         : document.body.dataset.pingURL || '',
+        onlineTimer     : (parseFloat(document.body.dataset.onlineTimer) || 30 ) * 1000,
+        offlineTimer    : (parseFloat(document.body.dataset.offlineTimer) || 5 ) * 1000,
         reconnectTimer  : (parseFloat(document.body.dataset.reconnectTimer) || .5 ) * 1000,
         timerCount      : 0,
         debug           : JSON.parse(document.body.dataset.debug || false),
@@ -48,7 +48,7 @@
             }, false);
 
             // set default count
-            AdvancedSocket.timerCount = AdvancedSocket.onlineCount;
+            AdvancedSocket.timerCount = AdvancedSocket.onlineTimer;
 
             AdvancedSocket.checkConnection();
         },
@@ -213,7 +213,7 @@
         disconnected : function(){
             AdvancedSocket.log('disconnected');
             // speed up timer to check
-            AdvancedSocket.timerCount = AdvancedSocket.offlineCount;
+            AdvancedSocket.timerCount = AdvancedSocket.offlineTimer;
             if (AdvancedSocket.statusLabel){
                 AdvancedSocket.statusLabel.className = 'alert alert-danger text-center';
                 AdvancedSocket.statusLabel.innerHTML = 'We are disconnected!!!';
@@ -231,7 +231,7 @@
         connected : function (){
             AdvancedSocket.log('connected');
             // return back to normal
-            AdvancedSocket.timerCount = AdvancedSocket.onlineCount;
+            AdvancedSocket.timerCount = AdvancedSocket.onlineTimer;
             if (AdvancedSocket.statusLabel){
                 AdvancedSocket.statusLabel.className = 'alert alert-success text-center';
                 AdvancedSocket.statusLabel.innerHTML = 'We are connected!!!';
