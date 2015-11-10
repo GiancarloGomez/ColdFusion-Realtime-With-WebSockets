@@ -175,7 +175,8 @@
 
         getIPInfo : function(){
             AdvancedSocket.log('getIPInfo');
-            if (window.jQuery && !AdvancedSocket.clientInfo.status){
+
+            if (window.jQuery && !AdvancedSocket.clientInfo.status && location.protocol !== 'https:'){
                 $.getJSON('http://ip-api.com/json/',function (response){
                     // set to variable
                     AdvancedSocket.clientInfo = response;

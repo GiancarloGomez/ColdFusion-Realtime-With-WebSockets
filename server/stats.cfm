@@ -11,7 +11,7 @@
 		newmessages		: application.publishedMessages - application.publishedPreviousMessages
 	};
 	for (channel in channels){
-		subscribers[channel] = WSgetSubscribers(channel);
+		subscribers[channel] = WSgetSubscribers(channel,true);
 		stats.subscriptions += subscribers[channel].len();
 		for (sub in subscribers[channel]){
 			if (!arrayFind(stats.clients,sub.clientid))

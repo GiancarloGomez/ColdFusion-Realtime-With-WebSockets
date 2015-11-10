@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700">
 	<link rel="stylesheet" href="/assets/css/theme.css">
-	<link rel="stylesheet" href="/clients/css/styles.css">
+	<link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
 
@@ -25,9 +25,9 @@
 
 	<ul id="console" class="list-unstyled"></ul>
 
-	<script src="/clients/js/simple.js"></script>
+	<script src="/assets/js/simple.js"></script>
 
-	<cfwebsocket name="ws" onmessage="parseMessage" subscribeto="websockets" />
+	<cfwebsocket name="ws" onmessage="parseMessage" subscribeto="websockets" secure="#cgi.server_port_secure#" />
 
 </body>
 </html>

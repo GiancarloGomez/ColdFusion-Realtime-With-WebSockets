@@ -100,6 +100,6 @@
 	</datalist>
 	</cfoutput>
 	<script src="scripts.js"></script>
-	<cfwebsocket name="mywsobj" onMessage="messageHandler" onOpen="openHandler" onError="errorHandler" />
+	<cfwebsocket name="mywsobj" onMessage="messageHandler" onOpen="openHandler" onError="errorHandler" secure="#cgi.server_port_secure#" />
 </body>
 </html>

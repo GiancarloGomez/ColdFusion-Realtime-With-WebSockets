@@ -68,4 +68,5 @@
 .message.clear{
 	background-color: transparent;
 	border-color: transparent;
+	box-sizing: border-box;
 }
