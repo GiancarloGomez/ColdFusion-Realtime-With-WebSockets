@@ -47,9 +47,9 @@ Defines the global function to run on a succesful message. Defaults to `doMessag
 Used for the check AdvancedSocket.checkConnection setTimeout
 - __pingURL__<br />
 The URL that will be used to ping if we are still a good connection. Should return a JSON object with a success value of true or false.
-- __onlineCount__<br />
+- __onlineTimer__<br />
 The timeout value to ping if autoConnect is enabled while we have a good connection. This defaults to 30 seconds and can be defined in the body data-online-timer attribute.
-- __offlineCount__<br />
+- __offlineTimer__<br />
 The timeout value to ping if autoConnect is enabled while we have a bad connection. This defaults to 5 seconds and can be defined in the body data-offline-timer attribute.
 - __reconnectTimer__<br />
 The timeout value call a reconnect attempt when a `FORCE-RECONNECT` value is received from the server. This defaults to 500ms and can be defined in the body data-reconnect-timer attribute.

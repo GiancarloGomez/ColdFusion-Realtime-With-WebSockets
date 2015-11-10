@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="/assets/css/styles.css">
 	<link rel="stylesheet" href="/assets/css/chat.css">
 </head>
-<body data-channels="chat" data-debug="false" data-auto-connect="false" data-online-timer="10" data-ping="/clients/chat-ping/" data-do-message="receiveMessage" class="off">
+<body data-channels="chat" data-debug="false" data-auto-connect="false" data-online-timer="10" data-ping-url="/clients/chat-ping/" data-do-message="receiveMessage" class="off">
 
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">

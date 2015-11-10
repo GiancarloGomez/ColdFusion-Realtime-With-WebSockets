@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="/assets/css/theme.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
 </head>
-<body data-channels="demo,websockets" data-debug="true" data-online-timer="30" data-ping="/clients/ping/">
+<body data-channels="demo,websockets" data-debug="true" data-online-timer="30" data-ping-url="/clients/ping/">
 
 	<!-- Header -->
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">

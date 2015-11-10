@@ -10,7 +10,7 @@
         clientInfo      : {},
         doMessage       : document.body.dataset.doMessage || 'doMessage',
         timer           : 0,
-        pingURL         : document.body.dataset.pingURL || '',
+        pingURL         : document.body.dataset.pingUrl || '',
         onlineTimer     : (parseFloat(document.body.dataset.onlineTimer) || 30 ) * 1000,
         offlineTimer    : (parseFloat(document.body.dataset.offlineTimer) || 5 ) * 1000,
         reconnectTimer  : (parseFloat(document.body.dataset.reconnectTimer) || .5 ) * 1000,
