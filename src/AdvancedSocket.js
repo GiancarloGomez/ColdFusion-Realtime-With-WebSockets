@@ -13,7 +13,7 @@
         pingURL         : document.body.dataset.ping || '',
         onlineCount     : (parseFloat(document.body.dataset.onlineTimer) || 30 ) * 1000,
         offlineCount    : (parseFloat(document.body.dataset.offlineTimer) || 5 ) * 1000,
-        reconnectCount  : (parseFloat(document.body.dataset.reconnectTimer) || .5 ) * 1000,
+        reconnectTimer  : (parseFloat(document.body.dataset.reconnectTimer) || .5 ) * 1000,
         timerCount      : 0,
         debug           : JSON.parse(document.body.dataset.debug || false),
         statusLabel     : document.getElementById('status-message'),
@@ -138,7 +138,7 @@
             if (obj.type === 'data'){
                 // force reconnect
                 if (obj.data === 'FORCE-RECONNECT'){
-                    window.setTimeout(AdvancedSocket.forceReconnect, AdvancedSocket.reconnectCount);
+                    window.setTimeout(AdvancedSocket.forceReconnect, AdvancedSocket.reconnectTimer);
                 }
 
                 // if we defined a global doMessage function

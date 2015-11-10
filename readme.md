@@ -51,7 +51,7 @@ The URL that will be used to ping if we are still a good connection. Should retu
 The timeout value to ping if autoConnect is enabled while we have a good connection. This defaults to 30 seconds and can be defined in the body data-online-timer attribute.
 - __offlineCount__<br />
 The timeout value to ping if autoConnect is enabled while we have a bad connection. This defaults to 5 seconds and can be defined in the body data-offline-timer attribute.
-- __reconnectCount__<br />
+- __reconnectTimer__<br />
 The timeout value call a reconnect attempt when a `FORCE-RECONNECT` value is received from the server. This defaults to 500ms and can be defined in the body data-reconnect-timer attribute.
 - __timerCount__<br />
 The timeout value that is used on reconnect calls. It is automally updated to either the online or offline value based on current state.
