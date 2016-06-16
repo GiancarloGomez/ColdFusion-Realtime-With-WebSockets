@@ -14,10 +14,6 @@ component{
         {name:"chat",cfclistener:"listeners.ChatListener"}
     ];
 
-    // public void function onError(e){
-    //     writeDump(e);
-    // }
-
     public boolean function onApplicationStart(){
         application.timestamp                   = getHttpTimeString();
         application.publishedMessages           = 0;
@@ -33,13 +29,24 @@ component{
             applicationStop();
             location('./',false);
         }
+        // IMPORTANT
+        // If using proxy set this to false to avoid
+        // "WebSocket server is not running in secure mode(SSL) Error"
+        request.websockets_secure = cgi.server_port_secure;
         return true;
     }
 
     public boolean function onWSAuthenticate(string username, string password, struct connectionInfo) {
-        arguments.connectionInfo.authenticated = true;
-        arguments.connectionInfo.username = arguments.username;
-        return true;
+        // Demo User Authentication - very simple here you would do real work
+        var usersAllowed    = ["JC","Bill","Susan"];
+        var authenticated   = arrayFindNoCase(usersAllowed,arguments.username);
+        if (authenticated){
+            arguments.connectionInfo.authenticated = true;
+            arguments.connectionInfo.username = arguments.username;
+        } else {
+            connectionInfo.authenticated = false;
+        }
+        return authenticated;
     }
 
 }

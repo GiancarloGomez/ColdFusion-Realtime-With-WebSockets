@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="icon" href="/favicon.png">
-	<title>WS : Chat</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<script src="/assets/js/lib/modernizr.min.js"></script>
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700">
+	<title>WS : Chat</title>
+	<link rel="icon" href="/favicon.png">
+	<link rel="author" href="/humans.txt" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
 	<link rel="stylesheet" href="/assets/css/theme.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
 	<link rel="stylesheet" href="/assets/css/chat.css">
@@ -68,9 +68,9 @@
 	</div>
 
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="/src/advancedsocket.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="/assets/js/advancedsocket.js"></script>
 	<script src="/assets/js/simple.js"></script>
 	<script src="/assets/js/chat.js"></script>
 
@@ -79,6 +79,6 @@
 					onOpen		= "AdvancedSocket.onOpen"
 					onClose		= "AdvancedSocket.onClose"
 					onError		= "AdvancedSocket.onError"
-					secure 		= "#cgi.server_port_secure#">
+					secure  	= "#request.websockets_secure#">
 </body>
 </html>

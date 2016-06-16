@@ -1,4 +1,74 @@
-var _users = document.getElementById('users');
+var _users  = document.getElementById('users'),
+    UI      = {connected:false};
+
+$(function(){
+    // setup modal and show
+    UI.loginModal   = $('#login').modal({
+                        backdrop    : 'static',
+                        keyboard    : false
+                    });
+    // setup rest of UI
+    UI.body         = $('body');
+    UI.username     = UI.loginModal.find('input');
+    UI.u_parent     = UI.username.parents('.form-group');
+    UI.message      = $('#message');
+    UI.sendMessage  = $('#messageFrm');
+    UI.leave        = $('#leave-room');
+
+    // focus on login field
+    UI.loginModal.on('shown.bs.modal',function(e){
+        UI.username.val('').focus();
+        _console.innerHTML = '';
+        _users.innerHTML = '';
+    });
+
+    // leave room
+    UI.leave.on('click',function(){
+        // Unsibscribe
+        ws.unsubscribe(AdvancedSocket.channels[0]);
+        // change our AdvancedSocket to not run the Auto Connect feature
+        AdvancedSocket.autoConnect = false;
+        AdvancedSocket.checkConnection();
+        UI.connected = false;
+        // UI Updates
+        UI.body.addClass('off');
+        UI.loginModal.modal('show');
+        return false;
+    })
+
+    // join room
+    UI.loginModal.find('#loginFrm').submit(function(){
+        var value = UI.username.val().trim();
+        if (value === ''){
+            UI.u_parent.addClass('has-error');
+            UI.u_parent.find('.help-block').html('Please enter a username to login');
+        } else {
+            // set the username into our Client Info
+            AdvancedSocket.clientInfo.username = value;
+            // Authenticate User
+            // On Success => AdvancedSocket.connected
+            // On Fail    => AdvancedSocket.onError
+            ws.authenticate(value, '');
+        }
+        return false;
+    });
+
+    // username blur
+    UI.username.on('focus',function(){
+       UI.u_parent.removeClass('has-error');
+       UI.u_parent.find('.help-block').html('');
+    });
+
+    // send message
+    UI.sendMessage.submit(function(){
+        var value = UI.message.val().trim();
+        if (value !== ''){
+            ws.publish(AdvancedSocket.channels[0],value);
+        }
+        UI.message.val('').focus();
+        return false;
+    });
+});
 
 function receiveMessage(obj){
     if(typeof obj.data === 'object'){
@@ -8,79 +78,33 @@ function receiveMessage(obj){
         _console.innerHTML += obj.data;
         // animate the scroll
         $(_console).animate({scrollTop : _console.scrollHeight + 'px'},500);
-        // _console.scrollTop = _console.scrollHeight;
     }
 }
 
-$(function(){
-
-    var m           = $('#login').modal({
-                        backdrop    : 'static',
-                        keyboard    : false
-                    }),
-        bd          = $('body'),
-        u_name      = m.find('input'),
-        u_parent    = u_name.parents('.form-group'),
-        message     = $('#message'),
-        sendMessage = $('#messageFrm'),
-        leave       = $('#leave-room');
-
-    // focus on login field
-    m.on('shown.bs.modal',function(e){
-        u_name.val('').focus();
-        _console.innerHTML = '';
-        _users.innerHTML = '';
-    });
-
-    // leave room
-    leave.on('click',function(){
-        // Unsibscribe
-        ws.unsubscribe(AdvancedSocket.channels[0]);
-        // change our AdvancedSocket to not run the Auto Connect feature
-        AdvancedSocket.autoConnect = false;
-        AdvancedSocket.checkConnection();
+AdvancedSocket.connected = function (){
+    // initial connect
+    if (UI.connected === false){
+        _console.innerHTML += '<div class="message clear"><div class="content">Welcome to the chat room ' + AdvancedSocket.clientInfo.username + '</div></div>';
         // UI Updates
-        bd.addClass('off');
-        m.modal('show');
-        return false;
-    })
+        UI.username.val('');
+        UI.body.removeClass('off');
+        UI.loginModal.modal('hide');
+        UI.message.focus();
+        UI.leave.removeClass('hide');
+        UI.connected = true;
+    }
+    AdvancedSocket.timerCount = AdvancedSocket.onlineTimer;
+    AdvancedSocket.statusLabel.className = 'alert alert-success text-center';
+    AdvancedSocket.statusLabel.innerHTML = 'We are connected!!!';
+}
 
-    // join room
-    m.find('#loginFrm').submit(function(){
-        var value = u_name.val().trim();
-        if (value === ''){
-            u_parent.addClass('has-error');
-            u_parent.find('.help-block').html('Please enter a username to login');
-        } else {
-            // set the username into our Client Info
-            AdvancedSocket.clientInfo.username = value;
-            // Authenticate User
-            ws.authenticate(value, '');
-            // Welcome User
-            _console.innerHTML += '<div class="message clear"><div class="content">Welcome to the chat room ' + value + '</div></div>';
-            // UI Updates
-            bd.removeClass('off');
-            m.modal('hide');
-            message.focus();
-            leave.removeClass('hide');
-        }
-        return false;
-    });
-
-    // username blur
-    u_name.on('focus',function(){
-       u_parent.removeClass('has-error');
-       u_parent.find('.help-block').html('');
-    });
-
-    // send message
-    sendMessage.submit(function(){
-        var value = message.val().trim();
-        if (value !== ''){
-            ws.publish(AdvancedSocket.channels[0],value);
-        }
-        message.val('').focus();
-        return false;
-    });
-
-});
+AdvancedSocket.onError = function(obj){
+    // when an error occurs in the websocket
+    if (obj.reqType === 'authenticate' && obj.code === -1){
+        UI.u_parent.addClass('has-error');
+        UI.u_parent.find('.help-block').html('Invalid User, please try again');
+        UI.username.val('');
+        AdvancedSocket.clientInfo.username = '';
+    }
+    AdvancedSocket.log('onError',obj);
+};

@@ -1,0 +1,13 @@
+/* TEAM */
+	Author: Giancarlo Gomez
+	Contact: giancarlo[dot]gomez[at]gmail.com
+	Twitter: @GiancarloGomez
+	From: Spring Hill, FL USA
+
+/* THANKS */
+
+/* SITE */
+	Last update: 2016-06-16
+	Language: ColdFusion, HTML, CSS, JavaScript
+	Doctype:HTML5
+	IDE: Sublime Text

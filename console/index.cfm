@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="icon" href="/favicon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>WS : Console</title>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700">
-	<link rel="stylesheet" href="/assets/css/theme.css">
+	<link rel="icon" href="favicon.png">
+	<link rel="author" href="humans.txt" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -88,7 +89,7 @@
 	<cfoutput>
 	<datalist id="channels">
 		<cfloop array="#WSGetAllChannels()#" index="channel">
-		<option value="#channel#">
+			<option value="#channel#">
 		</cfloop>
 	</datalist>
 	<datalist id="cfcs">
@@ -100,6 +101,12 @@
 	</datalist>
 	</cfoutput>
 	<script src="scripts.js"></script>
-	<cfwebsocket name="mywsobj" onMessage="messageHandler" onOpen="openHandler" onError="errorHandler" secure="#cgi.server_port_secure#" />
+
+	<!--- Remember to remove the cgi.server_port_secure check if using proxy --->
+	<cfwebsocket 	name="mywsobj"
+					onMessage="messageHandler"
+					onOpen="openHandler"
+					onError="errorHandler"
+					secure="#cgi.server_port_secure#" />
 </body>
 </html>

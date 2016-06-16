@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="icon" href="/favicon.png">
-	<title>CF Summit 2014 - Real Time w/ WebsSockets</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700">
+	<title>CF Summit 2014 - Real Time w/ WebsSockets</title>
+	<link rel="icon" href="/favicon.png">
+	<link rel="author" href="/humans.txt" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
 	<link rel="stylesheet" href="/assets/css/theme.css">
 </head>
 <body data-debug="false">
@@ -14,7 +15,7 @@
 	<div class="container-fluid">
 
 		<div class="page-header">
-			<h1>Realtime with WebSockets <small>- ColdFusion Summit 2014 - Giancarlo Gomez</small></h1>
+			<h1>Realtime with WebSockets</h1>
 		</div>
 
 		<nav class="navbar navbar-default">
@@ -74,10 +75,10 @@
 
 	</div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="//www.google.com/jsapi"></script>
-	<script src="/assets/js/lib/moment.min.js"></script>
+	<script src="/assets/js/moment.min.js"></script>
 	<script src="/assets/js/dashboard.js"></script>
 </body>
 </html>

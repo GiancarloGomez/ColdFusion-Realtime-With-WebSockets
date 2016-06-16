@@ -1,3 +1,6 @@
+ // Enhanced Version of example code found at
+ // https://helpx.adobe.com/coldfusion/developing-applications/coldfusion-and-html-5/using-coldfusion-websocket/using-websocket-to-broadcast-messages.html
+
  var UI = {
         console     : document.getElementById("_console"),
         channelname : document.getElementById("channelname"),
