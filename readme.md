@@ -16,4 +16,9 @@ This is the demo code used in my Realtime with WebSockets presentation. This cod
 * __Slides__<br />
 All slides for each time the presentation was given. 	
 
-
+## Conferences
+* ColdFusion Summit 2014
+* ColdFusion Summit 2015
+* ColdFusion Summit 2016
+* Dev.Objective 2016
+* NCDevCon 2016 
