@@ -64,7 +64,7 @@
 					<div class="form-group">
 						<label for="fnname" class="control-label col-sm-2">Function</label>
 						<div class="col-sm-10">
-							<input id="fnname" class="form-control" name="fnname" type="text" value="" placeholder="publishall" list="functions" />
+							<input id="fnname" class="form-control" name="fnname" type="text" value="" placeholder="publish" list="functions" />
 							<small class="help-block">Enter the name of the function to invoke</small>
 						</div>
 					</div>
@@ -96,8 +96,8 @@
 		<option value="console.invokeandpublish">
 	</datalist>
 	<datalist id="functions">
-		<option value="publishall">
-		<option value="publishall_remote">
+		<option value="publish">
+		<option value="p2p">
 	</datalist>
 	</cfoutput>
 	<script src="scripts.js"></script>
