@@ -11,7 +11,8 @@ component{
     this.wschannels = [
         {name:"demo",cfclistener:"listeners.ChannelListener"},
         {name:"websockets",cfclistener:"listeners.ChannelListener"},
-        {name:"chat",cfclistener:"listeners.ChatListener"}
+        {name:"chat",cfclistener:"listeners.ChatListener"},
+        {name:"dashboard"}
     ];
 
     public boolean function onApplicationStart(){

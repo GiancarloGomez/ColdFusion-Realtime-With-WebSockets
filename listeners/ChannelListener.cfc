@@ -4,6 +4,7 @@
 component {
 
 	public boolean function allowSubscribe(struct subscriberInfo){
+		dashboardStream();
 		return true;
 	}
 
@@ -15,12 +16,18 @@ component {
 
 		if (structKeyExists(arguments.publisherInfo,"username"))
 			arguments.message = arguments.publisherInfo.username & " : " & arguments.message;
+
+		dashboardStream();
+
 		return arguments.message;
 	}
 
 	public function afterUnsubscribe(struct subscriberInfo){
-		for(local.key in WSGetAllChannels())
-			WsPublish(local.key,arguments.subscriberInfo.connectioninfo.clientid & " UNSUBSCRIBED");
+		dashboardStream();
+	}
+
+	private function dashboardStream(){
+		WsPublish("dashboard","go-fetch");
 	}
 
 }

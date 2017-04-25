@@ -2,16 +2,30 @@ body{
 	padding-top:51px;
 }
 pre{
-	font: normal 12px/1.4em 'source code pro',consolas,monospace;
+	font: 400 14px/1.4em 'Operator Mono Ssm','source code pro',consolas,monospace;
 	border-radius: 0;
+	background-color: transparent;
 	margin:0;
+	border:0;
+	border-bottom:1px solid #ddd;
+	white-space: pre-wrap;
 }
-.list-unstyled li{
-	padding:.5em;
-	background:#eee;
-	margin:1px 0;
+
+#console{
+	padding-bottom:10px;
+}
+#console li{
 	position: relative;
+	opacity: .5;
+	transition: opacity .25s;
 }
+#console li:nth-child(even) { background-color: #f5f5f5; }
+#console li:last-child { opacity: 1; }
+
+.navbar-fixed-bottom + #console {
+	padding-bottom:51px;
+}
+
 #status-message{
 	margin:0;
 	border-radius: 0;

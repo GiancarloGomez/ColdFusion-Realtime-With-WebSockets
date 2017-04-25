@@ -7,8 +7,7 @@
 		clients 		: [],
 		messages 		: application.publishedMessages,
 		subscriptions 	: 0,
-		timestamp 		: application.timestamp,
-		newmessages		: application.publishedMessages - application.publishedPreviousMessages
+		timestamp 		: application.timestamp
 	};
 	for (channel in channels){
 		subscribers[channel] = WSgetSubscribers(channel,true);
@@ -18,12 +17,8 @@
 				stats.clients.append(sub.clientid);
 		}
 	};
-
-	// updated application.publishedPreviousMessages
-	lock scope="application" timeout="10" type="exclusive"{
-		application.publishedPreviousMessages = application.publishedMessages;
-	}
-
+	// set to count
 	stats.clients = stats.clients.len();
+	// output as json
 	writeOutput(serializeJSON(stats));
 </cfscript>

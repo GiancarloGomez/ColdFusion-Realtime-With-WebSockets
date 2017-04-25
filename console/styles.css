@@ -10,6 +10,12 @@ textarea {resize:none;}
 #live-stats.off{
 	opacity: 0;
 }
+#_console li {
+	opacity: .5;
+}
+#_console li:last-child{
+	opacity:1;
+}
 
 /* Classes */
 .large-data {

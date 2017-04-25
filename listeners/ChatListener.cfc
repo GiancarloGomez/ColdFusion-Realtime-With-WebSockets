@@ -17,6 +17,8 @@ component {
 			returnConnectedUsers();
 		}
 
+		dashboardStream();
+
 		return true;
 	}
 
@@ -34,6 +36,8 @@ component {
 			message 		: arguments.message,
 			connectioninfo 	: arguments.publisherInfo.connectionInfo
 		};
+
+		dashboardStream();
 
 		return local.messageData;
 	}
@@ -63,6 +67,7 @@ component {
 	public function afterUnsubscribe(struct subscriberInfo){
 		WsPublish("chat",arguments.subscriberInfo.username & " has left the chat room");
 		returnConnectedUsers();
+		dashboardStream();
 	}
 
 	private function returnConnectedUsers(){
@@ -90,6 +95,10 @@ component {
 		}
 		local.str &= "</ul>";
 		WsPublish("chat",{type:"clients",data:local.str});
+	}
+
+	private function dashboardStream(){
+		WsPublish("dashboard","go-fetch");
 	}
 
 }
