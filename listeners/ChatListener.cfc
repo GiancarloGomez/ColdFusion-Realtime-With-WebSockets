@@ -1,7 +1,4 @@
-/**
-* @extends CFIDE.websocket.ChannelListener
-*/
-component {
+component extends="CFIDE.websocket.ChannelListener" {
 
 	public boolean function allowSubscribe(struct subscriberInfo) {
 		//I am crucial. You must use me. Or else.
@@ -100,5 +97,4 @@ component {
 	private function dashboardStream(){
 		WsPublish("dashboard","go-fetch");
 	}
-
 }

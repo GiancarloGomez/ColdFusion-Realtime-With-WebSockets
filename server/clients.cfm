@@ -1,4 +1,3 @@
-
 <cfscript>
 	channels 	= WSGetAllChannels();
 	clients 	= 0;

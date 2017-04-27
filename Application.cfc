@@ -1,7 +1,4 @@
-/**
-* @output false
-*/
-component{
+component {
 
     this.name              = "websockets";
     this.sessionmanagement = true;
@@ -49,5 +46,4 @@ component{
         }
         return authenticated;
     }
-
 }

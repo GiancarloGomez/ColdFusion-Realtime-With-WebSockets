@@ -21,7 +21,10 @@
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
-					<li><a href="/console/" target="blank">CONSOLE</a></li>
+					<!--- Console moved to its own Repo which you can pull and include here --->
+					<cfif directoryExists(expandPath("./console"))>
+						<li><a href="/console/" target="blank">CONSOLE</a></li>
+					</cfif>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">APPS <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
