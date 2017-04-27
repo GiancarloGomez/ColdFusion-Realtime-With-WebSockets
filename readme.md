@@ -5,7 +5,7 @@ This is the demo code used in my Realtime with WebSockets presentation. This cod
 
 * __[Advanced Socket](https://github.com/GiancarloGomez/AdvancedSocket "AdvancedSockets Repo")__
 <br />Simple JavaScript Utility that can be used to extend ColdFusion's WebSocket connection to be able to check for connectivity issues, display status messages and handle reconnections.
-* __Console__
+* __[Console](https://github.com/GiancarloGomez/ColdFusion-WebSockets-Console "Console Repo")__
 <br />An updated/enhanced version of the [ColdFusion Team's original demo code](https://helpx.adobe.com/coldfusion/developing-applications/coldfusion-and-html-5/using-coldfusion-websocket/using-websocket-to-broadcast-messages.html) to work with WebSockets. This can be dropped into any Application to test your WebSocket configuration.
 * __Demo Code__
 	* Clients (Simple and Advanced Socket)
