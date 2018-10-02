@@ -45,8 +45,7 @@
 					onMessage	= "AdvancedSocket.onMessage"
 					onOpen		= "AdvancedSocket.onOpen"
 					onClose		= "AdvancedSocket.onClose"
-					onError		= "AdvancedSocket.onError"
-					secure  	= "#request.websockets_secure#">
+					onError		= "AdvancedSocket.onError">
 
 	<script>
 		function doMessage(obj){

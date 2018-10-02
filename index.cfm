@@ -85,7 +85,6 @@
 
 	<cfwebsocket 	name		= "ws"
 					onMessage	= "onMessage"
-					subscribeTo = "dashboard"
-					secure  	= "#request.websockets_secure#">
+					subscribeTo = "dashboard">
 </body>
 </html>

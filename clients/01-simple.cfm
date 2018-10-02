@@ -30,8 +30,7 @@
 
 	<cfwebsocket 	name 		="ws"
 					onMessage 	="parseMessage"
-					subscribeTo	="websockets"
-					secure 		="#request.websockets_secure#" />
+					subscribeTo	="websockets"/>
 
 </body>
 </html>

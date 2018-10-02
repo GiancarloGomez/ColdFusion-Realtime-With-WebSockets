@@ -19,6 +19,10 @@ component {
         return true;
     }
 
+    function onError(exception,eventName){
+        writeDump(arguments.exception);;
+    }
+
     public boolean function onRequestStart(targetPage){
         if (structKeyExists(url,"reload")){
             // tell everyone to reconnect
@@ -27,15 +31,14 @@ component {
             applicationStop();
             location('./',false);
         }
-        // IMPORTANT
-        // If using proxy set this to false to avoid
-        // "WebSocket server is not running in secure mode(SSL) Error"
-        request.websockets_secure = cgi.server_port_secure;
         return true;
     }
 
+    /**
+    * Demo User Authentication - very simple
+    * Here you would do real work
+    */
     public boolean function onWSAuthenticate(string username, string password, struct connectionInfo) {
-        // Demo User Authentication - very simple here you would do real work
         var usersAllowed    = ["JC","Bill","Susan"];
         var authenticated   = arrayFindNoCase(usersAllowed,arguments.username);
         if (authenticated){
