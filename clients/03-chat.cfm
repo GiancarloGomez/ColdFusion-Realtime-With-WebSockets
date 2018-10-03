@@ -7,7 +7,6 @@
 	<link rel="icon" href="/favicon.ico">
 	<link rel="author" href="/humans.txt" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
 	<link rel="stylesheet" href="/assets/css/theme.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
 	<link rel="stylesheet" href="/assets/css/chat.css">

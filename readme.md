@@ -17,11 +17,16 @@ This is the demo code used in my Realtime with WebSockets presentation. This cod
 All slides for each time the presentation was given.
 
 ## Conferences
+* Dev.Objective 2016
+* NCDevCon 2016
 * ColdFusion Summit 2014
 * ColdFusion Summit 2015
 * ColdFusion Summit 2016
-* Dev.Objective 2016
-* NCDevCon 2016
+* ColdFusion Summit 2017
+* ColdFusion Summit 2018
 
 ## Additional Demo Code
 Demo code used in the 2016 Conferences can be found in the [ColdFusion Realtime With WebSockets Demo Repo](https://github.com/GiancarloGomez/ColdFusion-Realtime-With-WebSockets-Demo-Code "ColdFusion Realtime With WebSockets Demo Code Repo")
+
+## Coming Soon
+At this moment, the demo files are based on deployment on IIS 8+ or Apache using the proxy or embedded WebSocket server. CommandBox ready updates will be available soon.

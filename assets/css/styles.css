@@ -2,7 +2,7 @@ body{
 	padding-top:51px;
 }
 pre{
-	font: 400 14px/1.4em 'Operator Mono Ssm','source code pro',consolas,monospace;
+	font: 400 14px/1.4em 'Operator Mono Ssm', Menlo, Consolas, monospace;
 	border-radius: 0;
 	background-color: transparent;
 	margin:0;

@@ -20,7 +20,7 @@ component {
     }
 
     function onError(exception,eventName){
-        writeDump(arguments.exception);;
+        writeDump(arguments.exception);
     }
 
     public boolean function onRequestStart(targetPage){
