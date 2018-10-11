@@ -16,6 +16,19 @@ This is the demo code used in my Realtime with WebSockets presentation. This cod
 * __Slides__<br />
 All slides for each time the presentation was given.
 
+## Run using CommandBox
+You can easily run the game using CommandBox. Simply clone this repo to your local machine
+and execute the ``box start`` command at the root folder .
+
+To use the console, make sure to clone the [__WebSockets Console App__](https://github.com/GiancarloGomez/ColdFusion-WebSockets-Console) and
+create an alias to the directory or drop inside the root folder.
+
+You can create an alias by running the ``server set`` command.
+
+```
+server set web.aliases./console = \path\to\console
+```
+
 ## Conferences
 * Dev.Objective 2016
 * NCDevCon 2016
@@ -28,5 +41,3 @@ All slides for each time the presentation was given.
 ## Additional Demo Code
 Demo code used in the 2016 Conferences can be found in the [ColdFusion Realtime With WebSockets Demo Repo](https://github.com/GiancarloGomez/ColdFusion-Realtime-With-WebSockets-Demo-Code "ColdFusion Realtime With WebSockets Demo Code Repo")
 
-## Coming Soon
-At this moment, the demo files are based on deployment on IIS 8+ or Apache using the proxy or embedded WebSocket server. CommandBox ready updates will be available soon.

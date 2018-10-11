@@ -8,6 +8,7 @@
 	<link rel="author" href="/humans.txt" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/css/theme.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body data-debug="false">
 
@@ -63,6 +64,16 @@
 			</div>
 		</section>
 
+		<div class="alert alert-info text-center">
+			<small>
+				Console requires having the console code at the root of this site either
+				by a virtual folder mapping or physical code in disk.
+				<br /><br />
+				If you use an alias make sure to change the following setting in the ColdFusion Administrator.
+				<br /><span><strong>Application.cfc/Application.cfm lookup order<br />In webroot</strong></span>
+			</small>
+		</div>
+
 	</div>
 
 	<div class="modal fade" tabindex="-1" role="dialog" id="notification">
@@ -76,6 +87,20 @@
 			</div>
 		</div>
 	</div>
+
+	<p id="sig">
+		Giancarlo Gomez<br />
+		<a href="https://fusedevelopments.com" target="_blank">Fuse Developments</a> &bull;
+		<a href="https://crosstrackr.com" target="_blank">CrossTrackr</a>
+		<br />
+		<a href="https://github.com/GiancarloGomez" target="_blank"><i class="fab fa-github"></i></a> &nbsp;
+		<a href="https://twitter.com/GiancarloGomez" target="_blank"><i class="fab fa-twitter"></i></a> &nbsp;
+		<a href="https://www.instagram.com/GiancarloGomez" target="_blank"><i class="fab fa-instagram"></i></a> &nbsp;
+		<a href="https://www.facebook.com/giancarlo.gomez" target="_blank"><i class="fab fa-facebook"></i></a> &nbsp;
+		<a href="https://www.linkedin.com/in/giancarlogomez" target="_blank"><i class="fab fa-linkedin-in"></i></a> &nbsp;
+		<a href="https://www.giancarlogomez.com" target="_blank"><i class="fas fa-rss"></i></a> &nbsp;
+		<a href="mailto:giancarlo.gomez@gmail.com"><i class="far fa-envelope"></i></a>
+	</p>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
