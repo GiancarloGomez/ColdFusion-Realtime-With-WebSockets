@@ -17,7 +17,7 @@ This is the demo code used in my Realtime with WebSockets presentation. This cod
 All slides for each time the presentation was given.
 
 ## Run using CommandBox
-You can easily run the game using CommandBox. Simply clone this repo to your local machine
+You can easily run the demo using CommandBox. Simply clone this repo to your local machine
 and execute the ``box start`` command at the root folder .
 
 To use the console, make sure to clone the [__WebSockets Console App__](https://github.com/GiancarloGomez/ColdFusion-WebSockets-Console) and
