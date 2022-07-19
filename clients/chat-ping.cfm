@@ -1,7 +1,7 @@
 <cfscript>
 	param name="url.id" default="";
 
-	clients 	= WSgetSubscribers("chat");
+	clients 	= wsGetSubscribers("chat");
 	clientIDs 	= [];
 
 	arrayEach(clients, function(rec){

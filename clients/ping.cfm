@@ -1,7 +1,7 @@
 <cfscript>
 	param name="url.id" default="";
 
-	clients 	= WSgetSubscribers("websockets");
+	clients 	= wsGetSubscribers("websockets");
 	clientIDs 	= [];
 
 	arrayEach(clients, function(rec){

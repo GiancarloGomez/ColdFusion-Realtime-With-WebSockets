@@ -7,7 +7,7 @@ component extends="CFIDE.websocket.ChannelListener" {
 		if(!structKeyExists(arguments.subscriberInfo,"username")) return false;
 
 		// send to all connected clients that this new subscriber has joined
-		WsPublish("chat",arguments.subscriberInfo.username & " has joined the chat room, say hello ... ");
+		wsPublish("chat",arguments.subscriberInfo.username & " has joined the chat room, say hello ... ");
 
 		// in a thread send to all clients (including just connected the full connected list)
 		thread name="subscribers_#createUUID()#" action="run"{
@@ -62,13 +62,13 @@ component extends="CFIDE.websocket.ChannelListener" {
 	}
 
 	public function afterUnsubscribe(struct subscriberInfo){
-		WsPublish("chat",arguments.subscriberInfo.username & " has left the chat room");
+		wsPublish("chat",arguments.subscriberInfo.username & " has left the chat room");
 		returnConnectedUsers();
 		dashboardStream();
 	}
 
 	private function returnConnectedUsers(){
-		local.clients 	= WSgetSubscribers("chat");
+		local.clients 	= wsGetSubscribers("chat");
 		local.str 		= "<ul>";
 		// sort the array
 		arraySort(local.clients,function (e1, e2){
@@ -91,10 +91,10 @@ component extends="CFIDE.websocket.ChannelListener" {
 							"</li>";
 		}
 		local.str &= "</ul>";
-		WsPublish("chat",{type:"clients",data:local.str});
+		wsPublish("chat",{type:"clients",data:local.str});
 	}
 
 	private function dashboardStream(){
-		WsPublish("dashboard","go-fetch");
+		wsPublish("dashboard","go-fetch");
 	}
 }

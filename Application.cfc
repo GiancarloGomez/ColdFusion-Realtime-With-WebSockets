@@ -7,10 +7,10 @@ component {
 
     // websockets
     this.wschannels = [
-        {name:"demo",cfclistener:"listeners.ChannelListener"},
-        {name:"websockets",cfclistener:"listeners.ChannelListener"},
-        {name:"chat",cfclistener:"listeners.ChatListener"},
-        {name:"dashboard"}
+        { name:"demo", cfclistener:"listeners.ChannelListener" },
+        { name:"websockets", cfclistener:"listeners.ChannelListener" },
+        { name:"chat", cfclistener:"listeners.ChatListener" },
+        { name:"dashboard" }
     ];
 
     public boolean function onApplicationStart(){
@@ -25,10 +25,10 @@ component {
     }
 
     public boolean function onRequestStart(targetPage){
-        if (structKeyExists(url,"reload")){
+        if ( structKeyExists(url,"reload") ){
             // tell everyone to reconnect
-            for(local.key in WSGetAllChannels())
-                WsPublish(local.key,"FORCE-RECONNECT");
+            for( var key in wsGetAllChannels() )
+                wsPublish(key,"FORCE-RECONNECT");
             applicationStop();
             location('./',false);
         }
@@ -40,7 +40,7 @@ component {
     * Here you would do real work
     */
     public boolean function onWSAuthenticate(string username, string password, struct connectionInfo) {
-        var usersAllowed    = ["JC","Bill","Susan"];
+        var usersAllowed    = ["JC","Maria","Mailang","Jonah","Gia","Molly","Lilly"];
         var authenticated   = arrayFindNoCase(usersAllowed,arguments.username);
         if (authenticated){
             arguments.connectionInfo.authenticated = true;

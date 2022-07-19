@@ -1,6 +1,6 @@
 <cfscript>
 	// get our stats
-	channels 	= WSGetAllChannels();
+	channels 	= wsGetAllChannels();
 	subscribers = {};
 	stats 		= {
 		channels 		: channels.len(),
@@ -10,7 +10,7 @@
 		timestamp 		: application.timestamp
 	};
 	for (channel in channels){
-		subscribers[channel] = WSgetSubscribers(channel,true);
+		subscribers[channel] = wsGetSubscribers(channel,true);
 		stats.subscriptions += subscribers[channel].len();
 		for (sub in subscribers[channel]){
 			if (!arrayFind(stats.clients,sub.clientid))

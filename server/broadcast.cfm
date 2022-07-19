@@ -4,7 +4,7 @@
 	if (!msg.len()){
 		// Let's get a random quote from http://api.icndb.com/jokes/random just to make it fun
 		try {
-			cfhttp(url="http://api.icndb.com/jokes/random",result="_message",timeout=5);
+			cfhttp(url="http://api.icndb.com/jokes/random?limitTo=[nerdy]",result="_message",timeout=5);
 			msg = deserializeJSON(_message.fileContent).value.joke;
 		}
 		catch (Any e){
@@ -13,7 +13,7 @@
 	}
 	// Specially helpful when using Frameworks or calling in the middle of an Ajax Request
 	cfthread(action:"run",name:threadName,message:msg){
-		WsPublish("websockets",attributes.message);
+		wsPublish("websockets",attributes.message);
 	}
 
 	// for notifications

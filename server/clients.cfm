@@ -1,11 +1,11 @@
 <cfscript>
-	channels 	= WSGetAllChannels();
+	channels 	= wsGetAllChannels();
 	clients 	= 0;
 	subscribers = {};
 	// sort my array for display
 	arraySort(channels,"text");
 	for (channel in channels){
-		subscribers[channel] = WSgetSubscribers(channel);
+		subscribers[channel] = wsGetSubscribers(channel);
 		clients += subscribers[channel].len();
 	}
 </cfscript>

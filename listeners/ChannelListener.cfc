@@ -24,6 +24,6 @@ component extends="CFIDE.websocket.ChannelListener" {
 	}
 
 	private function dashboardStream(){
-		WsPublish("dashboard","go-fetch");
+		wsPublish("dashboard","go-fetch");
 	}
 }
