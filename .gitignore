@@ -1,5 +1,7 @@
 node_modules
 logs
+.engine
+server.json
 
 # Fetch at new repo now
 console
